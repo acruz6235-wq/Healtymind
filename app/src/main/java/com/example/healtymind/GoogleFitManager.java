@@ -10,6 +10,7 @@ import com.google.android.gms.fitness.FitnessOptions;
 import com.google.android.gms.fitness.data.DataType;
 import com.google.android.gms.fitness.data.Field;
 
+
 public class GoogleFitManager {
 
     private Context context;
