@@ -1,11 +1,6 @@
-import org.gradle.kotlin.dsl.invoke
-
 plugins {
     alias(libs.plugins.android.application)
-
-    // Add the Google services Gradle plugin
     id("com.google.gms.google-services")
-
 }
 
 android {
@@ -37,7 +32,7 @@ android {
     }
 }
 
-dependencies{
+dependencies {
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
     implementation(libs.appcompat)
     implementation(libs.material)
@@ -52,4 +47,6 @@ dependencies{
     implementation(platform("com.google.firebase:firebase-bom:34.8.0"))
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.android.gms:play-services-fitness:21.1.0")
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
 }
