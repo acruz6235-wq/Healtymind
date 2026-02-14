@@ -1,138 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActividadActivity">
+    android:background="#DDDDDD"
+    tools:context=".Actividad_Activity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:fillViewport="true">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="32dp">
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="256dp"
-                android:layout_height="227dp"
-                android:layout_marginTop="20dp"
-                android:soundEffectsEnabled="true"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_activity" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"
+                android:padding="4dp">
+
+                <ImageView
+                    android:id="@+id/imageViewTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/ic_activity" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginBottom="2dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:text="▼  Text1"
+                    android:textColor="#8BC34A"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#FFFFFF"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Informacion"
+                        android:textColor="#333333" />
+                </LinearLayout>
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/textView13"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
-                android:text="TextView"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
-
-            <ProgressBar
-                android:id="@+id/progressBar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginBottom="2dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="▶   Text2"
+                android:textColor="#8BC34A"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="TextView"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/progressBar" />
-
-            <ProgressBar
-                android:id="@+id/progressBar2"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView14" />
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginBottom="2dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="▶  Text3"
+                android:textColor="#8BC34A"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="TextView"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/progressBar2" />
-
-            <ProgressBar
-                android:id="@+id/progressBar3"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView15" />
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginBottom="2dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="▶  Text4"
+                android:textColor="#8BC34A"
+                android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/textView16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="TextView"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/progressBar3" />
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginBottom="2dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="▶  Text5"
+                android:textColor="#8BC34A"
+                android:textStyle="bold" />
 
-            <ProgressBar
-                android:id="@+id/progressBar4"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView16" />
-
-            <TextView
-                android:id="@+id/textView17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="TextView"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/progressBar4" />
-
-            <ProgressBar
-                android:id="@+id/progressBar5"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView17" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
