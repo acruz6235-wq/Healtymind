@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intentestadisticas);
         });
         btnActividad.setOnClickListener(v -> {
-            Intent intentactividad = new Intent(MainActivity.this, ActividadActivity.class);
-            startActivity(intentactividad);
+            ActividadDialog dialog = new ActividadDialog(MainActivity.this);
+            dialog.show();
         });
         btnsettings.setOnClickListener(v -> {
             Intent intentsettings = new Intent(MainActivity.this, SettingsActivity.class);

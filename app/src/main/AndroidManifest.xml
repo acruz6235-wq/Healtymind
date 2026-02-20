@@ -15,9 +15,6 @@
             android:name=".SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".ActividadActivity"
-            android:exported="false" />
-        <activity
             android:name=".EstadisticasActivity"
             android:exported="false" />
         <activity
