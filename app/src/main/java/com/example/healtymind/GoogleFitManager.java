@@ -10,14 +10,13 @@ import com.google.android.gms.fitness.FitnessOptions;
 import com.google.android.gms.fitness.data.DataType;
 import com.google.android.gms.fitness.data.Field;
 
-
 public class GoogleFitManager {
 
-    private Context context;
+    private final Context context;
     private static final int GOOGLE_FIT_PERMISSIONS_REQUEST_CODE = 1001;
 
     // Configurar qué datos queremos leer de Google Fit
-    private FitnessOptions fitnessOptions = FitnessOptions.builder()
+    private final FitnessOptions fitnessOptions = FitnessOptions.builder()
             .addDataType(DataType.TYPE_STEP_COUNT_DELTA, FitnessOptions.ACCESS_READ)
             .addDataType(DataType.TYPE_DISTANCE_DELTA, FitnessOptions.ACCESS_READ)
             .addDataType(DataType.TYPE_CALORIES_EXPENDED, FitnessOptions.ACCESS_READ)
@@ -101,4 +100,3 @@ public class GoogleFitManager {
     public static int getRequestCode() {
         return GOOGLE_FIT_PERMISSIONS_REQUEST_CODE;
     }
-}
