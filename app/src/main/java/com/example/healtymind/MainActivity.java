@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton btnEstadisticas;
     ImageButton btnActividad;
     ImageButton btnsettings;
-    Button moment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
