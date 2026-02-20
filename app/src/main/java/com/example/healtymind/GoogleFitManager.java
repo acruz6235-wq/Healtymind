@@ -100,3 +100,4 @@ public class GoogleFitManager {
     public static int getRequestCode() {
         return GOOGLE_FIT_PERMISSIONS_REQUEST_CODE;
     }
+}
