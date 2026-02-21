@@ -4,109 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DDDDDD"
-    tools:context=".Actividad_Activity">
+    tools:context=".ActividadDialog" >
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="184dp"
+        android:layout_marginEnd="50dp"
+        android:text="cuestionarios "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingBottom="20dp">
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="50dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_margin="8dp"
-                android:padding="4dp">
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="50dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
-                <ImageView
-                    android:id="@+id/imageViewTop"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerInside"
-                    app:srcCompat="@drawable/ic_activity" />
-            </FrameLayout>
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="138dp"
+        android:layout_marginEnd="215dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        app:layout_constraintVertical_bias="0.06" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginHorizontal="8dp"
-                android:layout_marginBottom="2dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="15dp"
-                    android:text="▼  Text1"
-                    android:textColor="#8BC34A"
-                    android:textStyle="bold" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="#FFFFFF"
-                    android:padding="16dp">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Informacion"
-                        android:textColor="#333333" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginHorizontal="8dp"
-                android:layout_marginBottom="2dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="15dp"
-                android:text="▶   Text2"
-                android:textColor="#8BC34A"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginHorizontal="8dp"
-                android:layout_marginBottom="2dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="15dp"
-                android:text="▶  Text3"
-                android:textColor="#8BC34A"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginHorizontal="8dp"
-                android:layout_marginBottom="2dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="15dp"
-                android:text="▶  Text4"
-                android:textColor="#8BC34A"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginHorizontal="8dp"
-                android:layout_marginBottom="2dp"
-                android:gravity="center_vertical"
-                android:paddingLeft="15dp"
-                android:text="▶  Text5"
-                android:textColor="#8BC34A"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-    </ScrollView>
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="174dp"
+        android:layout_height="149dp"
+        android:layout_marginStart="119dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="118dp"
+        android:src="@drawable/gemini_generated_image_dvfl5odvfl5odvfl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
 </androidx.constraintlayout.widget.ConstraintLayout>

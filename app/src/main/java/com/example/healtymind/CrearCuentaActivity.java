@@ -10,9 +10,13 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class CrearCuentaActivity extends AppCompatActivity {
-    EditText EdtUsuario, EdtContrasenia, edtEmail, edtConfirmarPassword;
+    EditText EdtUsuario;
+    EditText EdtContrasenia;
+    EditText edtEmail;
+    EditText edtConfirmarPassword;
     Button btnRegistrar;
     TextView tvIniciarSesion;
     private FirebaseAuth mAuth;
@@ -22,7 +26,10 @@ public class CrearCuentaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_cuenta);
 
-        // ESTO FALTABA - conectar los campos
+        // Inicializar Firebase
+        mAuth = FirebaseAuth.getInstance();
+
+        // IMPORTANTE: Inicializar componentes
         EdtUsuario = findViewById(R.id.EdtUsuario);
         EdtContrasenia = findViewById(R.id.EdtContrasenia);
         edtEmail = findViewById(R.id.edtEmail);
@@ -30,14 +37,16 @@ public class CrearCuentaActivity extends AppCompatActivity {
         btnRegistrar = findViewById(R.id.btnRegistrar);
         tvIniciarSesion = findViewById(R.id.tvIniciarSesion);
 
-        mAuth = FirebaseAuth.getInstance();
-
+        // Botón Registrar
         btnRegistrar.setOnClickListener(v -> {
             registrarUsuario();
         });
 
+        // Link para volver al login
         tvIniciarSesion.setOnClickListener(v -> {
-            startActivity(new Intent(CrearCuentaActivity.this, Login.class));
+            Intent intent = new Intent(CrearCuentaActivity.this, Login.class);
+            startActivity(intent);
+            finish();
         });
     }
 
@@ -45,26 +54,55 @@ public class CrearCuentaActivity extends AppCompatActivity {
         String nombre = EdtUsuario.getText().toString().trim();
         String email = edtEmail.getText().toString().trim();
         String password = EdtContrasenia.getText().toString().trim();
-        String confirmar = edtConfirmarPassword.getText().toString().trim();
+        String confirmPassword = edtConfirmarPassword.getText().toString().trim();
 
-        if (nombre.isEmpty() || email.isEmpty() || password.isEmpty() || confirmar.isEmpty()) {
-            Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show();
+        // Validaciones
+        if (nombre.isEmpty()) {
+            EdtUsuario.setError("Ingresa tu nombre");
+            EdtUsuario.requestFocus();
             return;
         }
 
-        if (!password.equals(confirmar)) {
-            Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
+        if (email.isEmpty()) {
+            edtEmail.setError("Ingresa tu email");
+            edtEmail.requestFocus();
             return;
         }
 
+        if (password.isEmpty()) {
+            EdtContrasenia.setError("Ingresa una contraseña");
+            EdtContrasenia.requestFocus();
+            return;
+        }
+
+        if (password.length() < 6) {
+            EdtContrasenia.setError("La contraseña debe tener al menos 6 caracteres");
+            EdtContrasenia.requestFocus();
+            return;
+        }
+
+        if (!password.equals(confirmPassword)) {
+            edtConfirmarPassword.setError("Las contraseñas no coinciden");
+            edtConfirmarPassword.requestFocus();
+            return;
+        }
+
+        // Registrar en Firebase
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
-                        Toast.makeText(this, "Cuenta creada exitosamente", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(CrearCuentaActivity.this, MainActivity.class));
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        Toast.makeText(CrearCuentaActivity.this,
+                                "Cuenta creada exitosamente", Toast.LENGTH_SHORT).show();
+
+                        // Ir a MainActivity
+                        Intent intent = new Intent(CrearCuentaActivity.this, MainActivity.class);
+                        startActivity(intent);
                         finish();
                     } else {
-                        Toast.makeText(this, "Error: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(CrearCuentaActivity.this,
+                                "Error: " + task.getException().getMessage(),
+                                Toast.LENGTH_LONG).show();
                     }
                 });
     }
