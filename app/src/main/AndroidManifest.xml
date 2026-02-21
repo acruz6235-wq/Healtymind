@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,18 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Healtymind">
-        <activity
-            android:name=".SettingsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EstadisticasActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PerfilActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CrearCuentaActivity"
-            android:exported="false" />
+
         <activity
             android:name=".Login"
             android:exported="true">
@@ -35,14 +26,22 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".SettingsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".EstadisticasActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".PerfilActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".CrearCuentaActivity"
+            android:exported="false" />
 
     </application>
 

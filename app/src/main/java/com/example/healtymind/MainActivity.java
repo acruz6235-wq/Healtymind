@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
         btnEstadisticas = findViewById(R.id.btnEstadisticas);
         btnActividad = findViewById(R.id.btnActividad);
         btnsettings = findViewById(R.id.btnsettings);
-        moment = findViewById(R.id.moment);
 
         btnCuenta.setOnClickListener(v -> {
             Intent intentperfil = new Intent(MainActivity.this, PerfilActivity.class);
@@ -40,10 +39,6 @@ public class MainActivity extends AppCompatActivity {
         btnsettings.setOnClickListener(v -> {
             Intent intentsettings = new Intent(MainActivity.this, SettingsActivity.class);
             startActivity(intentsettings);
-        });
-        moment.setOnClickListener(v -> {
-            Intent intentmoment = new Intent(MainActivity.this, Login.class);
-            startActivity(intentmoment);
         });
 
     }
