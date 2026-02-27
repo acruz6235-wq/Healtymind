@@ -8,7 +8,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -25,25 +24,18 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Inicializar Firebase
         mAuth = FirebaseAuth.getInstance();
 
-        // Referenciar componentes
         EdtContrasenia = findViewById(R.id.EdtContrasenia);
         EdtUsuario = findViewById(R.id.EdtUsuario);
         btningresar = findViewById(R.id.btningresar);
         CrarCuenta = findViewById(R.id.CrarCuenta);
 
-        // Ir a Crear Cuenta
         CrarCuenta.setOnClickListener(v -> {
-            Intent intentperfil = new Intent(Login.this, CrearCuentaActivity.class);
-            startActivity(intentperfil);
+            startActivity(new Intent(Login.this, CrearCuentaActivity.class));
         });
 
-        // Botón Ingresar
-        btningresar.setOnClickListener(v -> {
-            loginUsuario();
-        });
+        btningresar.setOnClickListener(v -> loginUsuario());
     }
 
     private void loginUsuario() {
@@ -60,8 +52,8 @@ public class Login extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         FirebaseUser user = mAuth.getCurrentUser();
                         Toast.makeText(Login.this, "Bienvenido " + (user != null ? user.getEmail() : ""), Toast.LENGTH_SHORT).show();
-
                         Intent intent = new Intent(Login.this, MainActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                         finish();
                     } else {
@@ -75,7 +67,9 @@ public class Login extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
-            startActivity(new Intent(Login.this, MainActivity.class));
+            Intent intent = new Intent(Login.this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
             finish();
         }
     }
