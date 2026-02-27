@@ -25,22 +25,18 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Inicializar Firebase
         mAuth = FirebaseAuth.getInstance();
 
-        // Referenciar componentes
         EdtContrasenia = findViewById(R.id.EdtContrasenia);
         EdtUsuario = findViewById(R.id.EdtUsuario);
         btningresar = findViewById(R.id.btningresar);
         CrarCuenta = findViewById(R.id.CrarCuenta);
 
-        // Ir a Crear Cuenta
         CrarCuenta.setOnClickListener(v -> {
             Intent intentperfil = new Intent(Login.this, CrearCuentaActivity.class);
             startActivity(intentperfil);
         });
 
-        // Botón Ingresar
         btningresar.setOnClickListener(v -> {
             loginUsuario();
         });
