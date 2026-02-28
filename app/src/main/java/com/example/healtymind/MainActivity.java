@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton btnEstadisticas;
     ImageButton btnActividad;
     ImageButton btnsettings;
+    TextView textView;
 
 
     @Override
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         btnEstadisticas = findViewById(R.id.btnEstadisticas);
         btnActividad = findViewById(R.id.btnActividad);
         btnsettings = findViewById(R.id.btnsettings);
+        textView = findViewById(R.id.textView);
 
         btnCuenta.setOnClickListener(v -> {
             Intent intentperfil = new Intent(MainActivity.this, PerfilActivity.class);
@@ -38,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
         });
         btnsettings.setOnClickListener(v -> {
             Intent intentsettings = new Intent(MainActivity.this, SettingsActivity.class);
+            startActivity(intentsettings);
+        });
+        textView.setOnClickListener(v -> {
+            Intent intentsettings = new Intent(MainActivity.this, NotificationActivity.class);
             startActivity(intentsettings);
         });
 

@@ -35,13 +35,12 @@ public class Login extends AppCompatActivity {
             startActivity(new Intent(Login.this, CrearCuentaActivity.class));
         });
 
-<<<<<<< HEAD
+
         btningresar.setOnClickListener(v -> {
             loginUsuario();
         });
-=======
         btningresar.setOnClickListener(v -> loginUsuario());
->>>>>>> 9daf2cd747fc0cceabff5494bd9abd70e579639d
+
     }
 
     private void loginUsuario() {
