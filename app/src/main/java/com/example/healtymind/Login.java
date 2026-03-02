@@ -35,7 +35,12 @@ public class Login extends AppCompatActivity {
             startActivity(new Intent(Login.this, CrearCuentaActivity.class));
         });
 
+
+        btningresar.setOnClickListener(v -> {
+            loginUsuario();
+        });
         btningresar.setOnClickListener(v -> loginUsuario());
+
     }
 
     private void loginUsuario() {
