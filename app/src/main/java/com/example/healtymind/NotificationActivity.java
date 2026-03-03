@@ -47,10 +47,9 @@ public class NotificationActivity extends AppCompatActivity {
             canal.setDescription("Canal para notificaciones de música y alertas");
             canal.enableVibration(true);
 
-            // ✅ Forzar sonido personalizado en el canal
             Uri sonido = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.sonido);
             AudioAttributes audioAttributes = new AudioAttributes.Builder()
-                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC) // ✅ cambiado a MUSIC
+                    .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
                     .setUsage(AudioAttributes.USAGE_NOTIFICATION)
                     .build();
             canal.setSound(sonido, audioAttributes);
@@ -104,7 +103,7 @@ public class NotificationActivity extends AppCompatActivity {
         builder.setContentText("¡Tu música favorita te espera! Escúchala ahora");
         builder.setPriority(NotificationCompat.PRIORITY_HIGH);
         builder.setAutoCancel(true);
-        builder.setSound(sonido); // ✅ sonido personalizado
+        builder.setSound(sonido);
 
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
         notificationManagerCompat.notify(99, builder.build());
