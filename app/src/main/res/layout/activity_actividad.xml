@@ -3,71 +3,62 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ActividadDialog" >
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="184dp"
-        android:layout_marginEnd="50dp"
-        android:text="cuestionarios "
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="50dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="50dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
-
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="138dp"
-        android:layout_marginEnd="215dp"
-        android:text="TextView"
+    <View
+        android:id="@+id/cuadrado"
+        android:layout_width="125dp"
+        android:layout_height="201dp"
+        android:background="@drawable/custom_shape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.779"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15"
-        app:layout_constraintVertical_bias="0.06" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.867" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="174dp"
-        android:layout_height="149dp"
-        android:layout_marginStart="119dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="118dp"
-        android:src="@drawable/gemini_generated_image_dvfl5odvfl5odvfl"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+    <TextView
+        android:id="@+id/Cuestioanrios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/cuestionarios"
+        android:textColor="@color/purple"
+        app:layout_constraintEnd_toEndOf="@+id/cuadrado"
+        app:layout_constraintStart_toStartOf="@+id/cuadrado"
+        app:layout_constraintTop_toTopOf="@+id/cuadrado" />
+
+    <TextView
+        android:id="@+id/Desafios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/desafios"
+        android:textColor="@color/purple"
+        app:layout_constraintEnd_toEndOf="@+id/cuadrado"
+        app:layout_constraintStart_toStartOf="@+id/cuadrado"
+        app:layout_constraintTop_toBottomOf="@+id/Cuestioanrios" />
+
+    <TextView
+        android:id="@+id/Racha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/racha"
+        android:textColor="@color/purple"
+        app:layout_constraintEnd_toEndOf="@+id/cuadrado"
+        app:layout_constraintStart_toStartOf="@+id/cuadrado"
+        app:layout_constraintTop_toBottomOf="@+id/Desafios" />
+
+    <TextView
+        android:id="@+id/Repiracion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/respiracion"
+        android:textColor="@color/purple"
+        app:layout_constraintEnd_toEndOf="@+id/cuadrado"
+        app:layout_constraintStart_toStartOf="@+id/cuadrado"
+        app:layout_constraintTop_toBottomOf="@+id/Racha" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

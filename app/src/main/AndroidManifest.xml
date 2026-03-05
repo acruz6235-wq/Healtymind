@@ -41,7 +41,15 @@
         <activity
             android:name=".CrearCuentaActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".Desafio_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Racha_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Respiracion_Activity"
+            android:exported="false" />
         <service
             android:name=".MiFirebaseService"
             android:exported="false">
