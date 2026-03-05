@@ -2,11 +2,14 @@ package com.example.healtymind;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity {
     ImageButton btnCuenta;
@@ -26,6 +29,16 @@ public class MainActivity extends AppCompatActivity {
         btnActividad = findViewById(R.id.btnActividad);
         btnsettings = findViewById(R.id.btnsettings);
         textView = findViewById(R.id.textView);
+
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        String token = task.getResult();
+                        Log.d("FCM Token", token);
+                    } else {
+                        Log.e("FCM Token", "Error: " + task.getException()); // ✅ ver el error
+                    }
+                });
 
         btnCuenta.setOnClickListener(v -> {
             Intent intentperfil = new Intent(MainActivity.this, PerfilActivity.class);

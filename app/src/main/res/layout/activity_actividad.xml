@@ -3,143 +3,62 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#DDDDDD"
-    tools:context=".Actividad_Activity">
+    android:layout_height="match_parent">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+    <View
+        android:id="@+id/cuadrado"
+        android:layout_width="125dp"
+        android:layout_height="201dp"
+        android:background="@drawable/custom_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.779"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.867" />
 
-        <LinearLayout
-            android:id="@+id/parentContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingBottom="20dp">
+    <TextView
+        android:id="@+id/Cuestioanrios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/cuestionarios"
+        android:textColor="@color/purple"
+        app:layout_constraintEnd_toEndOf="@+id/cuadrado"
+        app:layout_constraintStart_toStartOf="@+id/cuadrado"
+        app:layout_constraintTop_toTopOf="@+id/cuadrado" />
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_margin="8dp"
-                android:padding="4dp">
-                <ImageView
-                    android:id="@+id/imageViewTop"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerInside"
-                    app:srcCompat="@drawable/ic_activity" />
-            </FrameLayout>
+    <TextView
+        android:id="@+id/Desafios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/desafios"
+        android:textColor="@color/purple"
+        app:layout_constraintEnd_toEndOf="@+id/cuadrado"
+        app:layout_constraintStart_toStartOf="@+id/cuadrado"
+        app:layout_constraintTop_toBottomOf="@+id/Cuestioanrios" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginHorizontal="8dp"
-                android:layout_marginBottom="2dp">
+    <TextView
+        android:id="@+id/Racha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/racha"
+        android:textColor="@color/purple"
+        app:layout_constraintEnd_toEndOf="@+id/cuadrado"
+        app:layout_constraintStart_toStartOf="@+id/cuadrado"
+        app:layout_constraintTop_toBottomOf="@+id/Desafios" />
 
-                <TextView
-                    android:id="@+id/tv_header1"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="15dp"
-                    android:text="▶  Text1"
-                    android:textColor="#8BC34A"
-                    android:textStyle="bold"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:background="?attr/selectableItemBackground"/>
+    <TextView
+        android:id="@+id/Repiracion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/respiracion"
+        android:textColor="@color/purple"
+        app:layout_constraintEnd_toEndOf="@+id/cuadrado"
+        app:layout_constraintStart_toStartOf="@+id/cuadrado"
+        app:layout_constraintTop_toBottomOf="@+id/Racha" />
 
-                <LinearLayout
-                    android:id="@+id/ly_info1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="#FFFFFF"
-                    android:padding="16dp"
-                    android:visibility="gone">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Información detallada del punto 1..."
-                        android:textColor="#333333" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginHorizontal="8dp"
-                android:layout_marginBottom="2dp">
-
-                <TextView
-                    android:id="@+id/tv_header2"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="15dp"
-                    android:text="▶  Text2"
-                    android:textColor="#8BC34A"
-                    android:textStyle="bold"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:background="?attr/selectableItemBackground"/>
-
-                <LinearLayout
-                    android:id="@+id/ly_info2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="#FFFFFF"
-                    android:padding="16dp"
-                    android:visibility="gone">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Información detallada del punto 2..."
-                        android:textColor="#333333" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginHorizontal="8dp"
-                android:layout_marginBottom="2dp">
-
-                <TextView
-                    android:id="@+id/tv_header3"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="15dp"
-                    android:text="▶  Text3"
-                    android:textColor="#8BC34A"
-                    android:textStyle="bold"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:background="?attr/selectableItemBackground"/>
-
-                <LinearLayout
-                    android:id="@+id/ly_info3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="#FFFFFF"
-                    android:padding="16dp"
-                    android:visibility="gone">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Información detallada del punto 3..."
-                        android:textColor="#333333" />
-                </LinearLayout>
-            </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
