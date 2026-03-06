@@ -41,7 +41,7 @@ public class NotificationActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel canal = new NotificationChannel(
                     CHANNEL_ID,
-                    "Notificaciones de Música",
+                    "Notificacion_Prueba",
                     NotificationManager.IMPORTANCE_HIGH
             );
             canal.setDescription("Canal para notificaciones de música y alertas");
@@ -99,8 +99,8 @@ public class NotificationActivity extends AppCompatActivity {
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID);
         builder.setSmallIcon(android.R.drawable.ic_dialog_alert);
-        builder.setContentTitle("Nueva canción disponible");
-        builder.setContentText("¡Tu música favorita te espera! Escúchala ahora");
+        builder.setContentTitle("Pruba");
+        builder.setContentText("Testeo Rapido");
         builder.setPriority(NotificationCompat.PRIORITY_HIGH);
         builder.setAutoCancel(true);
         builder.setSound(sonido);
