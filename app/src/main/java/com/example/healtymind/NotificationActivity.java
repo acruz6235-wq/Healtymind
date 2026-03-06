@@ -41,7 +41,8 @@ public class NotificationActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel canal = new NotificationChannel(
                     CHANNEL_ID,
-                    "Notificacion_Prueba",
+
+                    "NOTIFICATION TEST",
                     NotificationManager.IMPORTANCE_HIGH
             );
             canal.setDescription("Canal para notificaciones de música y alertas");
@@ -99,8 +100,9 @@ public class NotificationActivity extends AppCompatActivity {
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID);
         builder.setSmallIcon(android.R.drawable.ic_dialog_alert);
-        builder.setContentTitle("Pruba");
-        builder.setContentText("Testeo Rapido");
+
+        builder.setContentTitle("Nueva NOTIFICACION DE HEALTYMIND");
+        builder.setContentText("TEST DE NOTIFICACION ");
         builder.setPriority(NotificationCompat.PRIORITY_HIGH);
         builder.setAutoCancel(true);
         builder.setSound(sonido);
