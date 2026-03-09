@@ -4,11 +4,11 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
 
 public class ActividadDialog extends Dialog {
@@ -33,7 +33,6 @@ public class ActividadDialog extends Dialog {
         Racha = findViewById(R.id.Racha);
         Repiracion = findViewById(R.id.Repiracion);
 
-
         Desafios.setOnClickListener(v -> {
             getContext().startActivity(new Intent(getContext(), Desafio_Activity.class));
         });
@@ -47,13 +46,14 @@ public class ActividadDialog extends Dialog {
         });
 
         if (getWindow() != null) {
-            getWindow().setBackgroundDrawableResource(android.R.color.holo_blue_dark);
+            getWindow().setBackgroundDrawableResource(android.R.color.black);
+            getWindow().getAttributes().windowAnimations = R.style.DialogAnimacion;
+
+            WindowManager.LayoutParams params = getWindow().getAttributes();
+            params.width = WindowManager.LayoutParams.MATCH_PARENT;
+            params.height = WindowManager.LayoutParams.WRAP_CONTENT;
+            params.gravity = Gravity.BOTTOM | Gravity.END;
+            getWindow().setAttributes(params);
         }
-
-        WindowManager.LayoutParams params = getWindow().getAttributes();
-        params.width = WindowManager.LayoutParams.MATCH_PARENT;
-        params.height = WindowManager.LayoutParams.WRAP_CONTENT;
-        getWindow().setAttributes(params);
     }
-
 }

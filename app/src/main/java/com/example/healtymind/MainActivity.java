@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             dialog.show();
         });
         btnsettings.setOnClickListener(v -> {
-            Intent intentsettings = new Intent(MainActivity.this, Racha_Activity.class);
+            Intent intentsettings = new Intent(MainActivity.this, SettingsActivity.class);
             startActivity(intentsettings);
         });
         textView.setOnClickListener(v -> {
