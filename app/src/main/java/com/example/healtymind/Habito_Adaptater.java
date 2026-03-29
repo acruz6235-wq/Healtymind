@@ -1,5 +1,6 @@
 package com.example.healtymind;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,56 +9,50 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
-public class Habito_Adaptater extends RecyclerView.Adapter<Habito_Adaptater.HabitoViewHolder> {
+public class Habito_Adaptater extends RecyclerView.Adapter<Habito_Adaptater.ViewHolder> {
 
-    // lista de datos
-    List<DiaHabito> listaDias;
+    private List<DiaHabito> listaDias;
 
-    // 2. El Constructor para recibir la lista
     public Habito_Adaptater(List<DiaHabito> listaDias) {
         this.listaDias = listaDias;
     }
 
     @NonNull
     @Override
-    public HabitoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // Inflamos el diseño del circulito (item_dia.xml)
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_dia, parent, false);
-        return new HabitoViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HabitoViewHolder holder, int position) {
-        // Obtenemos los datos del objeto actual
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         DiaHabito dia = listaDias.get(position);
+        holder.tvDia.setText(String.valueOf(dia.getNumeroDia()));
 
-        // Ponemos el número en el TextView
-        holder.tvNum.setText(String.valueOf(dia.num_dia));
-
-        // Lógica de color: Verde si está hecho, gris si no
-        if (dia.dia_hecho) {
-            holder.circulo.setBackgroundResource(R.drawable.circle_green);
+        if (dia.isCompletado()) {
+            // Fondo verde si está hecho
+            holder.viewCirculo.setBackgroundResource(R.drawable.circle_green);
+            holder.tvDia.setTextColor(Color.WHITE);
         } else {
-            holder.circulo.setBackgroundResource(R.drawable.circle_gray);
+            // Fondo vacío si no
+            holder.viewCirculo.setBackgroundResource(R.drawable.circle_gray);
+            holder.tvDia.setTextColor(Color.BLACK);
         }
     }
 
     @Override
     public int getItemCount() {
-        // Retorna el tamaño de la lista
         return listaDias.size();
     }
 
-    // 3. El ViewHolder (El mapa de IDs del XML)
-    public static class HabitoViewHolder extends RecyclerView.ViewHolder {
-        TextView tvNum;
-        View circulo;
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        TextView tvDia;
+        View viewCirculo;
 
-        public HabitoViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            // Vinculamos con los IDs reales de tu item_dia.xml
-            tvNum = itemView.findViewById(R.id.tvNumeroDia);
-            circulo = itemView.findViewById(R.id.viewCirculo);
+            tvDia = itemView.findViewById(R.id.tvNumeroDia);
+            viewCirculo = itemView.findViewById(R.id.viewCirculo);
         }
     }
 }

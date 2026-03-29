@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intentestadisticas);
         });
         btnActividad.setOnClickListener(v -> {
-            ActividadDialog dialog = new ActividadDialog(MainActivity.this);
+            ActividadDialog dialog = new ActividadDialog(MainActivity.this, ActividadDialog.class);
             dialog.show();
         });
         btnsettings.setOnClickListener(v -> {
@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intentsettings);
         });
         textView.setOnClickListener(v -> {
-            Intent intentsettings = new Intent(MainActivity.this, NotificationActivity.class);
-            startActivity(intentsettings);
+            Intent intentsettings1 = new Intent(MainActivity.this, NotificationActivity.class);
+            startActivity(intentsettings1);
         });
 
     }

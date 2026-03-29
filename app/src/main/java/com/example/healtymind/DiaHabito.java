@@ -1,11 +1,14 @@
 package com.example.healtymind;
 
 public class DiaHabito {
-    int num_dia;
-    boolean dia_hecho;
+    private int numeroDia;
+    private boolean completado;
 
-    public DiaHabito(int num_dia, boolean dia_hecho){
-        this.num_dia = num_dia;
-        this.dia_hecho = dia_hecho;
+    public DiaHabito(int numeroDia, boolean completado) {
+        this.numeroDia = numeroDia;
+        this.completado = completado;
     }
+
+    public int getNumeroDia() { return numeroDia; }
+    public boolean isCompletado() { return completado; }
 }

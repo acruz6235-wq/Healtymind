@@ -8,7 +8,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
 
 public class ActividadDialog extends Dialog {
@@ -18,7 +17,7 @@ public class ActividadDialog extends Dialog {
     TextView Racha;
     TextView Repiracion;
 
-    public ActividadDialog(@NonNull Context context) {
+    public ActividadDialog(@NonNull Context context, Class<ActividadDialog> actividadDialogClass) {
         super(context);
     }
 

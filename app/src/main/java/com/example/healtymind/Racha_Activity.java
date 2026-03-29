@@ -1,59 +1,54 @@
 package com.example.healtymind;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class Racha_Activity extends AppCompatActivity {
 
-    // Variables para la vista
     RecyclerView rvCalendario;
     TextView tvRachaSuperior, tvRachaCard, tvMesAnio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_racha);
 
-        // 1. Vincular los IDs del XML
-        // Asegúrate de haber cambiado los IDs en tu XML como hablamos
         rvCalendario = findViewById(R.id.rvCalendario);
-        tvRachaSuperior = findViewById(R.id.tvRachaSuperior); // El de arriba
-        tvRachaCard = findViewById(R.id.tvRachaCard);       // El de la tarjeta azul
+        tvRachaSuperior = findViewById(R.id.tvRachaSuperior);
+        tvRachaCard = findViewById(R.id.tvRachaCard);
         tvMesAnio = findViewById(R.id.tvMesAnio);
 
-        // 2. Configurar el RecyclerView en 7 columnas
         rvCalendario.setLayoutManager(new GridLayoutManager(this, 7));
+        cargarDatosRacha();
+    }
 
-        // 3. Crear la lista y calcular la racha dinámicamente
+    private void cargarDatosRacha() {
+        SharedPreferences prefs = getSharedPreferences("HealthyMindPrefs", MODE_PRIVATE);
+        Calendar calendar = Calendar.getInstance();
+
+        int maxDias = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
         List<DiaHabito> listaDias = new ArrayList<>();
-        int diasCompletados = 0;
+        int diasConRacha = 0;
 
-        for (int i = 1; i <= 30; i++) {
-            // Lógica: Los primeros 13 días están hechos (true)
-            boolean estaHecho = (i <= 13);
-
-            if (estaHecho) {
-                diasCompletados++; // Sumamos a la racha
-            }
-
-            listaDias.add(new DiaHabito(i, estaHecho));
+        for (int i = 1; i <= maxDias; i++) {
+            // Buscamos si el día i está marcado como completado
+            boolean completado = prefs.getBoolean("dia_" + i + "_completado", false);
+            if (completado) diasConRacha++;
+            listaDias.add(new DiaHabito(i, completado));
         }
+        Habito_Adaptater adapter = new Habito_Adaptater(listaDias);
+        rvCalendario.setAdapter(adapter);
 
-        // 4. Sincronizar los textos con el conteo real
-        String rachaTexto = diasCompletados + " días";
-        tvRachaSuperior.setText(rachaTexto);
-        tvRachaCard.setText(rachaTexto);
-        tvMesAnio.setText("Noviembre 2024");
-
-        // 5. Conectar el Adaptador
-        Habito_Adaptater adaptador = new Habito_Adaptater(listaDias);
-        rvCalendario.setAdapter(adaptador);
+        String textoRacha = diasConRacha + " días";
+        tvRachaSuperior.setText(textoRacha);
+        tvRachaCard.setText(textoRacha);
+        tvMesAnio.setText("Marzo 2026");
     }
 }
